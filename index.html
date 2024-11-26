@@ -29,20 +29,33 @@
         header {
             background: #333;
             color: #fff;
-            text-align: center;
+            text-align: left;
             padding: 2rem;
             position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         header h1 {
             margin: 0;
             font-size: 2.5rem;
+            margin-left: 1rem;
         }
 
         header p {
             margin: 0.5rem 0 0;
             font-size: 1.2rem;
             color: #bbb;
+            margin-left: 1rem;
+        }
+
+        .profile-picture {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #fff;
         }
 
         .toggle-button {
@@ -220,11 +233,17 @@
         @media (max-width: 600px) {
             header {
                 padding-top: 5rem; /* Adds space for the menu and toggle button */
+                flex-direction: column;
             }
 
             .toggle-button,
             .burger-menu {
                 top: 10px;
+            }
+
+            header h1, header p {
+                margin-left: 0;
+                text-align: center;
             }
         }
     </style>
@@ -233,8 +252,11 @@
     <header>
         <button class="burger-menu" id="burgerMenuButton" onclick="toggleMenu()">☰ Menu</button>
         <button class="toggle-button" onclick="toggleMode()">Light Mode</button>
-        <h1>Sobhan Fooladi Mahani</h1>
-        <p>Python Developer | AI</p>
+        <img src="profile.png" alt="Profile Picture" class="profile-picture">
+        <div>
+            <h1>Sobhan Fooladi Mahani</h1>
+            <p>Python Developer | AI</p>
+        </div>
     </header>
     <div class="menu" id="menu">
         <a href="#contact" onclick="navigateToSection('contact')">Contact</a>
@@ -249,7 +271,7 @@
         <section id="contact">
             <h2 class="section-title">Contact Information</h2>
             <p><strong>Email:</strong> sobhan.fld@outlook.com</p>
-            <p><strong>Address:</strong> Carrer de Valencia 443</p>
+            <p><strong>Address:</strong> Spain, Barcelona, Carrer de Valencia 443</p>
             <p><strong>Phone:</strong> +34 661062800</p>
             <div class="action-buttons">
                 <button onclick="callMe()">Call Me</button>
@@ -259,11 +281,25 @@
         <section id="objective">
             <h2 class="section-title">Objective</h2>
             <p>I am a seasoned Python Developer with a strong background in IT. My experience includes working with a leading cryptocurrency company, managing and executing intricate IT projects, and creating AI-driven web applications.</p>
+            <p>
+                I have a proven track record of successfully managing and executing intricate IT projects, delivering high-quality code, and bringing innovative products to market. My expertise in Python programming and microservices architecture using Flask enables me to bridge the gap between business and technology,
+            </p>
+            <p>
+                ensuring that software solutions are delivered on time, within budget, and exceed customer expectations. I also have a proven track record of creating AI-driven web applications with the team I am currently working with.
+            </p>
         </section>
         <section id="experience">
             <h2 class="section-title">Experience</h2>
             <ul>
-                <li><strong>Backend Developer at Imaz Tech</strong> (Barcelona, Spain) - Jul 2023 - Present</li>
+                <li><strong>Developer at Imaz Tech</strong> (Barcelona, Spain) - Jul 2023 - Present</li>
+                    <ul>
+                        <li> Developed and maintained backend services and APIs using Flask for ML services and microservices</li>
+                        <li> Optimized application performance through code refactoring and database indexing</li>
+                        <li> Collaborated with front-end developers to create responsive and interactive web applications.</li>
+                        <li> Performed unit testing and debugging to ensure code reliability and scalability.</li>
+                        <li> Led a team of developers in an Agile environment to deliver projects on time and within budget.</li>
+                    </ul>
+                <p> </p>
                 <li><strong>Software Engineer at SaminCoin</strong> (Karaj, Iran) - Oct 2021 - Jan 2023</li>
             </ul>
         </section>
