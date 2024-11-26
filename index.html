@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobhan Fooladi Mahani - CV</title>
+    <meta name="theme-color" content="#1e1e1e">
     <style>
         /* General Reset */
         body {
@@ -12,6 +13,7 @@
             padding: 0;
             line-height: 1.6;
             transition: background-color 0.3s, color 0.3s;
+            scroll-behavior: smooth;
         }
 
         /* Dark Mode Styles */
@@ -27,7 +29,7 @@
         }
 
         header {
-            background: #333;
+            background: linear-gradient(135deg, #1e1e1e, #333);
             color: #fff;
             text-align: left;
             padding: 2rem;
@@ -35,6 +37,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            border-bottom: 2px solid #444;
         }
 
         header h1 {
@@ -55,14 +58,15 @@
             height: 150px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid #fff;
+            border: 3px solid #1ca7ec;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
         }
 
         .toggle-button {
             position: absolute;
             top: 20px;
             right: 20px;
-            background-color: #555;
+            background-color: #1ca7ec;
             color: #fff;
             border: none;
             padding: 0.5rem 1rem;
@@ -73,14 +77,14 @@
         }
 
         .toggle-button:hover {
-            background-color: #777;
+            background-color: #1481b4;
         }
 
         .burger-menu {
             position: absolute;
             top: 20px;
             left: 20px;
-            background-color: #555;
+            background-color: #1ca7ec;
             color: #fff;
             border: none;
             padding: 0.5rem 1rem;
@@ -90,7 +94,7 @@
         }
 
         .burger-menu:hover {
-            background-color: #777;
+            background-color: #1481b4;
         }
 
         .burger-menu.hidden {
@@ -103,9 +107,9 @@
             left: -100%;
             width: 250px;
             height: 100%;
-            background-color: #333;
+            background-color: #1e1e1e;
             padding: 1rem;
-            box-shadow: 3px 0 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 3px 0 10px rgba(0, 0, 0, 0.5);
             z-index: 1002;
             transition: left 0.3s ease-in-out;
         }
@@ -115,20 +119,22 @@
         }
 
         .menu a {
-            color: #ddd;
+            color: #1ca7ec;
             text-decoration: none;
             display: block;
             margin: 1rem 0;
             cursor: pointer;
+            font-weight: bold;
+            transition: color 0.3s;
         }
 
         .menu a:hover {
-            color: #1ca7ec;
+            color: #62c3f5;
         }
 
         .close-menu {
             display: block;
-            background-color: #555;
+            background-color: #1ca7ec;
             color: #fff;
             border: none;
             padding: 0.5rem 1rem;
@@ -138,7 +144,7 @@
         }
 
         .close-menu:hover {
-            background-color: #777;
+            background-color: #1481b4;
         }
 
         .container {
@@ -169,7 +175,7 @@
         .section-title {
             font-size: 1.8rem;
             margin-bottom: 1rem;
-            color: #f2f2f2;
+            color: #1ca7ec;
             border-bottom: 2px solid #444;
             display: inline-block;
         }
@@ -190,29 +196,22 @@
             cursor: pointer;
             margin-right: 0.5rem;
             transition: background-color 0.3s, color 0.3s;
-        }
-
-        body.dark-mode .action-buttons button {
-            background-color: #777;
+            background-color: #1ca7ec;
             color: #fff;
         }
 
-        body.light-mode .action-buttons button {
-            background-color: #ddd;
-            color: #333;
-        }
-
         .action-buttons button:hover {
-            background-color: #1ca7ec;
+            background-color: #1481b4;
             color: #fff;
         }
 
         footer {
             text-align: center;
             padding: 1rem;
-            background: #333;
+            background: #1e1e1e;
             color: #bbb;
             margin-top: 2rem;
+            border-top: 2px solid #444;
         }
 
         body.light-mode footer {
@@ -221,12 +220,12 @@
         }
 
         a {
-            color: #62c3f5;
+            color: #1ca7ec;
             text-decoration: none;
         }
 
         a:hover {
-            color: #1ca7ec;
+            color: #62c3f5;
         }
 
         /* Mobile View Adjustments */
@@ -273,6 +272,8 @@
             <p><strong>Email:</strong> sobhan.fld@outlook.com</p>
             <p><strong>Address:</strong> Spain, Barcelona, Carrer de Valencia 443</p>
             <p><strong>Phone:</strong> +34 661062800</p>
+            <p><strong>Date of Birth:</strong> May 5, 1996</p>
+            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/sobhan-fooladi-71b407232/" target="_blank">sobhan-fooladi-71b407232</a></p>
             <div class="action-buttons">
                 <button onclick="callMe()">Call Me</button>
                 <button onclick="sendEmail()">Send Email</button>
@@ -280,34 +281,38 @@
         </section>
         <section id="objective">
             <h2 class="section-title">Objective</h2>
-            <p>I am a seasoned Python Developer with a strong background in IT. My experience includes working with a leading cryptocurrency company, managing and executing intricate IT projects, and creating AI-driven web applications.</p>
-            <p>
-                I have a proven track record of successfully managing and executing intricate IT projects, delivering high-quality code, and bringing innovative products to market. My expertise in Python programming and microservices architecture using Flask enables me to bridge the gap between business and technology,
-            </p>
-            <p>
-                ensuring that software solutions are delivered on time, within budget, and exceed customer expectations. I also have a proven track record of creating AI-driven web applications with the team I am currently working with.
-            </p>
+            <p>I am a seasoned Python Developer with a strong background in Information Technology. My experience includes working with a leading cryptocurrency company where I was responsible for developing and maintaining complex software solutions.</p>
+            <p>I have a proven track record of successfully managing and executing intricate IT projects, delivering high-quality code, and bringing innovative products to market. My expertise in Python programming and microservices architecture using Flask enables me to bridge the gap between business and technology, ensuring that software solutions are delivered on time, within budget, and exceed customer expectations.</p>
+            <p>I also have a proven track record of creating AI-driven web applications with the team I am currently working with.</p>
         </section>
         <section id="experience">
             <h2 class="section-title">Experience</h2>
             <ul>
-                <li><strong>Developer at Imaz Tech</strong> (Barcelona, Spain) - Jul 2023 - Present</li>
-                    <ul>
-                        <li> Developed and maintained backend services and APIs using Flask for ML services and microservices</li>
-                        <li> Optimized application performance through code refactoring and database indexing</li>
-                        <li> Collaborated with front-end developers to create responsive and interactive web applications.</li>
-                        <li> Performed unit testing and debugging to ensure code reliability and scalability.</li>
-                        <li> Led a team of developers in an Agile environment to deliver projects on time and within budget.</li>
-                    </ul>
-                <p> </p>
+                <li><strong>Backend Developer at Imaz Tech</strong> (Barcelona, Spain) - Jul 2023 - Present</li>
+                <ul>
+                    <li>Developed and maintained backend services and APIs using Flask for ML services and microservices.</li>
+                    <li>Optimized application performance through code refactoring and database indexing.</li>
+                    <li>Collaborated with front-end developers to create responsive and interactive web applications.</li>
+                    <li>Performed unit testing and debugging to ensure code reliability and scalability.</li>
+                    <li>Led a team of developers in an Agile environment to deliver projects on time and within budget.</li>
+                </ul>
                 <li><strong>Software Engineer at SaminCoin</strong> (Karaj, Iran) - Oct 2021 - Jan 2023</li>
+                <ul>
+                    <li>Developed and maintained backend systems using Python and Django.</li>
+                    <li>Designed and implemented RESTful APIs for various projects.</li>
+                    <li>Collaborated with a team of developers to troubleshoot and optimize code.</li>
+                    <li>Utilized version control systems such as Git for code management.</li>
+                    <li>Performed code reviews and provided constructive feedback to peers.</li>
+                    <li>Contributed to the architecture and design of new software features.</li>
+                    <li>Developed scenario models using UML for new features and collaborated with the UI/UX team.</li>
+                </ul>
             </ul>
         </section>
         <section id="education">
             <h2 class="section-title">Education</h2>
             <ul>
-                <li><strong>Bachelor's in IT</strong>, Azad University of Karaj - Sep 2015 - Aug 2020</li>
-                <li><strong>Master's in Telecommunications</strong>, UPC - Feb 2023 - Present</li>
+                <li><strong>Bachelor's in Information Technology</strong>, Azad University of Karaj - Sep 2015 - Aug 2020</li>
+                <li><strong>Master's in Telecommunications (MATT)</strong>, UPC - Feb 2023 - Present</li>
             </ul>
         </section>
         <section id="skills">
@@ -321,7 +326,7 @@
             <h2 class="section-title">Languages</h2>
             <p><strong>English:</strong> Advanced, IELTS</p>
             <p><strong>Spanish:</strong> Beginner</p>
-            <p><strong>Farsi:</strong> Maternal Language</p>
+            <p><strong>Farsi:</strong> Native Language</p>
         </section>
     </div>
     <footer>
