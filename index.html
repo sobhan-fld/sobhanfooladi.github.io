@@ -5,44 +5,142 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobhan Fooladi Mahani - CV</title>
     <style>
+        /* General Reset */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
+            line-height: 1.6;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Dark Mode Styles */
+        body.dark-mode {
             background-color: #1e1e1e;
             color: #ddd;
         }
+
+        /* Light Mode Styles */
+        body.light-mode {
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
         header {
             background: #333;
             color: #fff;
-            padding: 2rem;
             text-align: center;
+            padding: 2rem;
             position: relative;
         }
+
         header h1 {
-            font-size: 2.5rem;
             margin: 0;
-            animation: fadeIn 2s;
+            font-size: 2.5rem;
         }
+
         header p {
             margin: 0.5rem 0 0;
             font-size: 1.2rem;
             color: #bbb;
         }
+
+        .toggle-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #555;
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .toggle-button:hover {
+            background-color: #777;
+        }
+
+        .burger-menu {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #555;
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .burger-menu:hover {
+            background-color: #777;
+        }
+
+        .menu {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 250px;
+            height: 100%;
+            background-color: #333;
+            padding: 1rem;
+            box-shadow: 3px 0 10px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            transition: left 0.3s ease-in-out;
+        }
+
+        .menu.open {
+            left: 0;
+        }
+
+        .menu a {
+            color: #ddd;
+            text-decoration: none;
+            display: block;
+            margin: 1rem 0;
+            cursor: pointer;
+        }
+
+        .menu a:hover {
+            color: #1ca7ec;
+        }
+
+        .close-menu {
+            display: block;
+            background-color: #555;
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+
+        .close-menu:hover {
+            background-color: #777;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
         section {
             background: #2e2e2e;
-            margin: 1rem auto;
+            margin: 1rem 0;
             padding: 2rem;
             border-radius: 15px;
             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-            max-width: 800px;
-            transform: scale(1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        section:hover {
-            transform: scale(1.03);
-            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
+
+        body.light-mode section {
+            background: #fff;
+            color: #333;
         }
+
         .section-title {
             font-size: 1.8rem;
             margin-bottom: 1rem;
@@ -50,126 +148,158 @@
             border-bottom: 2px solid #444;
             display: inline-block;
         }
-        ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
+
+        body.light-mode .section-title {
+            color: #333;
+            border-bottom: 2px solid #888;
         }
-        ul li {
-            margin-bottom: 1rem;
-            position: relative;
-            padding-left: 1.5rem;
+
+        .action-buttons {
+            margin-top: 1rem;
         }
-        ul li:before {
-            content: "▶";
-            position: absolute;
-            left: 0;
-            color: #888;
+
+        .action-buttons button {
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 0.5rem;
+            transition: background-color 0.3s, color 0.3s;
         }
-        .contact-info, .skills, .Languages {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
+
+        body.dark-mode .action-buttons button {
+            background-color: #777;
+            color: #fff;
         }
-        .contact-info div, .skills div, .Languages div {
-            margin-bottom: 1rem;
-            width: 48%;
+
+        body.light-mode .action-buttons button {
+            background-color: #ddd;
+            color: #333;
         }
-        a {
-            color: #62c3f5;
-            text-decoration: none;
-            transition: color 0.3s ease;
+
+        .action-buttons button:hover {
+            background-color: #1ca7ec;
+            color: #fff;
         }
-        a:hover {
-            color: #1ca7ec;
-        }
+
         footer {
             text-align: center;
             padding: 1rem;
             background: #333;
             color: #bbb;
             margin-top: 2rem;
-            font-size: 0.9rem;
         }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
+
+        body.light-mode footer {
+            background: #ddd;
+            color: #333;
+        }
+
+        a {
+            color: #62c3f5;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #1ca7ec;
         }
     </style>
 </head>
-<body>
+<body class="dark-mode">
     <header>
+        <button class="burger-menu" onclick="toggleMenu()">☰ Menu</button>
+        <button class="toggle-button" onclick="toggleMode()">Switch to Light Mode</button>
         <h1>Sobhan Fooladi Mahani</h1>
         <p>Python Developer | AI</p>
     </header>
-    <section id="contact">
-        <h2 class="section-title">Contact Information</h2>
-        <div class="contact-info">
-            <div><strong>Email:</strong> sobhan.fld@outlook.com</div>
-            <div><strong>Address:</strong> Carrer de Valencia 443</div>
-            <div><strong>Phone:</strong> +34 661062800</div>
-            <div><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/sobhan-fooladi-71b407232/" target="_blank">LinkedIn Profile</a></div>
-            <div><strong>Date of Birth:</strong> May 5, 1996</div>
-        </div>
-    </section>
-    <section id="objective">
-        <h2 class="section-title">Objective</h2>
-        <p>
-            I am a seasoned Python Developer with a strong background in Information Technology. My experience includes working with a leading cryptocurrency company where I was responsible for developing and maintaining complex software solutions.
-        </p>
-        <p>
-            I have a proven track record of successfully managing and executing intricate IT projects, delivering high-quality code, and bringing innovative products to market. My expertise in Python programming and microservices architecture using Flask enables me to bridge the gap between business and technology,
-        </p>
-        <p>
-            ensuring that so ware solutions are delivered on time,
- within budget, and exceed customer expectations. I also
- have a proven track record of creating AI-driven web
- applications with the team I am currently working with.
-        </p>
-    </section>
-    <section id="experience">
-        <h2 class="section-title">Experience</h2>
-        <ul>
-            <li><strong>Backend Developer at Imaz Tech</strong> (Barcelona, Spain) - Jul 2023 - Present</li>
-            <li><strong>Software Engineer at SaminCoin</strong> (Karaj, Iran) - Oct 2021 - Jan 2023</li>
-        </ul>
-    </section>
-    <section id="education">
-        <h2 class="section-title">Education</h2>
-        <ul>
-            <li><strong>Bachelor's in Information Technology</strong>, Azad University of Karaj - Sep 2015 - Aug 2020</li>
-            <li><strong>Master's in Telecommunications</strong>, UPC - Feb 2023 - Present</li>
-        </ul>
-    </section>
-    <section id="skills">
-        <h2 class="section-title">Skills</h2>
-        <div class="skills">
-            <div><strong>Programming:</strong> Python, Flask, Django</div>
-            <div><strong>Technologies:</strong> Docker, Git, Machine Vision</div>
-            <div><strong>AI:</strong> Machine Learning, Deep Learning</div>
-            <div><strong>Other:</strong> Document Workflow, Scenario Modeling</div>
-        </div>
-    </section>
-    <section id="languages">
-        <h2 class="section-title">Languages</h2>
-        <div class="Languages">
-            <div><strong>English:</strong> Advanced, IELTS</div>
-            <div><strong>Spanish:</strong> Beginner</div>
-            <div><strong>Farsi:</strong> Maternal Language</div>
-        </div>
-    </section>
+    <div class="menu" id="menu">
+        <a href="#contact" onclick="navigateToSection('contact')">Contact</a>
+        <a href="#objective" onclick="navigateToSection('objective')">Objective</a>
+        <a href="#experience" onclick="navigateToSection('experience')">Experience</a>
+        <a href="#education" onclick="navigateToSection('education')">Education</a>
+        <a href="#skills" onclick="navigateToSection('skills')">Skills</a>
+        <a href="#languages" onclick="navigateToSection('languages')">Languages</a>
+        <button class="close-menu" onclick="toggleMenu()">Close</button>
+    </div>
+    <div class="container">
+        <section id="contact">
+            <h2 class="section-title">Contact Information</h2>
+            <p><strong>Email:</strong> sobhan.fld@outlook.com</p>
+            <p><strong>Address:</strong> Carrer de Valencia 443</p>
+            <p><strong>Phone:</strong> +34 661062800</p>
+            <div class="action-buttons">
+                <button onclick="callMe()">Call Me</button>
+                <button onclick="sendEmail()">Send Email</button>
+            </div>
+        </section>
+        <section id="objective">
+            <h2 class="section-title">Objective</h2>
+            <p>I am a seasoned Python Developer with a strong background in IT. My experience includes working with a leading cryptocurrency company, managing and executing intricate IT projects, and creating AI-driven web applications.</p>
+        </section>
+        <section id="experience">
+            <h2 class="section-title">Experience</h2>
+            <ul>
+                <li><strong>Backend Developer at Imaz Tech</strong> (Barcelona, Spain) - Jul 2023 - Present</li>
+                <li><strong>Software Engineer at SaminCoin</strong> (Karaj, Iran) - Oct 2021 - Jan 2023</li>
+            </ul>
+        </section>
+        <section id="education">
+            <h2 class="section-title">Education</h2>
+            <ul>
+                <li><strong>Bachelor's in IT</strong>, Azad University of Karaj - Sep 2015 - Aug 2020</li>
+                <li><strong>Master's in Telecommunications</strong>, UPC - Feb 2023 - Present</li>
+            </ul>
+        </section>
+        <section id="skills">
+            <h2 class="section-title">Skills</h2>
+            <p><strong>Programming:</strong> Python, Flask, Django</p>
+            <p><strong>Technologies:</strong> Docker, Git, Machine Vision</p>
+            <p><strong>AI:</strong> Machine Learning, Deep Learning</p>
+            <p><strong>Other:</strong> Document Workflow, Scenario Modeling</p>
+        </section>
+        <section id="languages">
+            <h2 class="section-title">Languages</h2>
+            <p><strong>English:</strong> Advanced, IELTS</p>
+            <p><strong>Spanish:</strong> Beginner</p>
+            <p><strong>Farsi:</strong> Maternal Language</p>
+        </section>
+    </div>
     <footer>
         <p>© 2024 Sobhan Fooladi Mahani</p>
     </footer>
     <script>
-        document.querySelectorAll("section").forEach(section => {
-            section.addEventListener("mouseenter", () => {
-                section.style.transform = "scale(1.05)";
-            });
-            section.addEventListener("mouseleave", () => {
-                section.style.transform = "scale(1)";
-            });
-        });
+        function toggleMode() {
+            const body = document.body;
+            const button = document.querySelector('.toggle-button');
+            if (body.classList.contains('dark-mode')) {
+                body.classList.remove('dark-mode');
+                body.classList.add('light-mode');
+                button.textContent = "Switch to Dark Mode";
+            } else {
+                body.classList.remove('light-mode');
+                body.classList.add('dark-mode');
+                button.textContent = "Switch to Light Mode";
+            }
+        }
+
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('open');
+        }
+
+        function navigateToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            section.scrollIntoView({ behavior: 'smooth' });
+            toggleMenu();
+        }
+
+        function callMe() {
+            window.location.href = 'tel:+34661062800';
+        }
+
+        function sendEmail() {
+            window.location.href = 'mailto:sobhan.fld@outlook.com';
+        }
     </script>
 </body>
 </html>
