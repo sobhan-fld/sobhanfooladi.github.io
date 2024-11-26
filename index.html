@@ -6,58 +6,94 @@
     <title>Sobhan Fooladi Mahani - CV</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
+            background-color: #1e1e1e;
+            color: #ddd;
         }
         header {
             background: #333;
             color: #fff;
-            padding: 1rem 2rem;
+            padding: 2rem;
             text-align: center;
+            position: relative;
         }
         header h1 {
+            font-size: 2.5rem;
             margin: 0;
+            animation: fadeIn 2s;
+        }
+        header p {
+            margin: 0.5rem 0 0;
+            font-size: 1.2rem;
+            color: #bbb;
         }
         section {
-            padding: 2rem;
-            background: #fff;
+            background: #2e2e2e;
             margin: 1rem auto;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
             max-width: 800px;
+            transform: scale(1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        section:hover {
+            transform: scale(1.03);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
         }
         .section-title {
-            color: #444;
-            margin-bottom: 0.5rem;
-            text-decoration: underline;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #f2f2f2;
+            border-bottom: 2px solid #444;
+            display: inline-block;
         }
         ul {
-            padding: 0;
             list-style: none;
+            padding: 0;
+            margin: 0;
         }
         ul li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            padding-left: 1.5rem;
         }
-        .contact-info, .skills {
+        ul li:before {
+            content: "▶";
+            position: absolute;
+            left: 0;
+            color: #888;
+        }
+        .contact-info, .skills, .Languages {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
         }
-        .contact-info div, .skills div {
+        .contact-info div, .skills div, .Languages div {
             margin-bottom: 1rem;
             width: 48%;
+        }
+        a {
+            color: #62c3f5;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #1ca7ec;
         }
         footer {
             text-align: center;
             padding: 1rem;
             background: #333;
-            color: #fff;
-            position: relative;
+            color: #bbb;
             margin-top: 2rem;
+            font-size: 0.9rem;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
@@ -66,7 +102,7 @@
         <h1>Sobhan Fooladi Mahani</h1>
         <p>Python Developer | AI</p>
     </header>
-    <section>
+    <section id="contact">
         <h2 class="section-title">Contact Information</h2>
         <div class="contact-info">
             <div><strong>Email:</strong> sobhan.fld@outlook.com</div>
@@ -76,22 +112,13 @@
             <div><strong>Date of Birth:</strong> May 5, 1996</div>
         </div>
     </section>
-    <section>
+    <section id="objective">
         <h2 class="section-title">Objective</h2>
         <p>
-             I am a seasoned Python Developer with a strong
- background in Information Technology. My experience
- includes working with a leading cryptocurrency company
- where I was responsible for developing and maintaining
- complex so ware solutions.
+            I am a seasoned Python Developer with a strong background in Information Technology. My experience includes working with a leading cryptocurrency company where I was responsible for developing and maintaining complex software solutions.
         </p>
         <p>
-            I have a proven track record of successfully managing and
- executing intricate IT projects, delivering high-quality
- code, and bringing innovative products to market. My
- expertise in Python programming and microservices
- architecture using Flask enables me to bridge the gap
- between business and technology,
+            I have a proven track record of successfully managing and executing intricate IT projects, delivering high-quality code, and bringing innovative products to market. My expertise in Python programming and microservices architecture using Flask enables me to bridge the gap between business and technology,
         </p>
         <p>
             ensuring that so ware solutions are delivered on time,
@@ -100,21 +127,21 @@
  applications with the team I am currently working with.
         </p>
     </section>
-    <section>
+    <section id="experience">
         <h2 class="section-title">Experience</h2>
         <ul>
             <li><strong>Backend Developer at Imaz Tech</strong> (Barcelona, Spain) - Jul 2023 - Present</li>
             <li><strong>Software Engineer at SaminCoin</strong> (Karaj, Iran) - Oct 2021 - Jan 2023</li>
         </ul>
     </section>
-    <section>
+    <section id="education">
         <h2 class="section-title">Education</h2>
         <ul>
             <li><strong>Bachelor's in Information Technology</strong>, Azad University of Karaj - Sep 2015 - Aug 2020</li>
             <li><strong>Master's in Telecommunications</strong>, UPC - Feb 2023 - Present</li>
         </ul>
     </section>
-    <section>
+    <section id="skills">
         <h2 class="section-title">Skills</h2>
         <div class="skills">
             <div><strong>Programming:</strong> Python, Flask, Django</div>
@@ -123,7 +150,7 @@
             <div><strong>Other:</strong> Document Workflow, Scenario Modeling</div>
         </div>
     </section>
-        <section>
+    <section id="languages">
         <h2 class="section-title">Languages</h2>
         <div class="Languages">
             <div><strong>English:</strong> Advanced, IELTS</div>
@@ -134,5 +161,15 @@
     <footer>
         <p>© 2024 Sobhan Fooladi Mahani</p>
     </footer>
+    <script>
+        document.querySelectorAll("section").forEach(section => {
+            section.addEventListener("mouseenter", () => {
+                section.style.transform = "scale(1.05)";
+            });
+            section.addEventListener("mouseleave", () => {
+                section.style.transform = "scale(1)";
+            });
+        });
+    </script>
 </body>
 </html>
