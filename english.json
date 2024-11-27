@@ -1,0 +1,68 @@
+{
+    "profilePicture": "profile.png",
+    "fullName": "Sobhan Fooladi Mahani",
+    "title": "Python Developer | AI",
+    "contact": {
+        "email": "sobhan.fld@outlook.com",
+        "address": "Spain, Barcelona, Carrer de Valencia 443",
+        "phone": "+34 661062800",
+        "dob": "May 5, 1996",
+        "linkedin": "https://www.linkedin.com/in/sobhan-fooladi-71b407232/"
+    },
+    "objective": [
+        "I am a seasoned Python Developer with a strong background in Information Technology. My experience includes working with a leading cryptocurrency company where I was responsible for developing and maintaining complex software solutions.",
+        "I have a proven track record of successfully managing and executing intricate IT projects, delivering high-quality code, and bringing innovative products to market. My expertise in Python programming and microservices architecture using Flask enables me to bridge the gap between business and technology, ensuring that software solutions are delivered on time, within budget, and exceed customer expectations.",
+        "I also have a proven track record of creating AI-driven web applications with the team I am currently working with."
+    ],
+    "experience": [
+        {
+            "position": "Backend Developer at Imaz Tech",
+            "location": "Barcelona, Spain",
+            "period": "Jul 2023 - Present",
+            "responsibilities": [
+                "Developed and maintained backend services and APIs using Flask for ML services and microservices.",
+                "Optimized application performance through code refactoring and database indexing.",
+                "Collaborated with front-end developers to create responsive and interactive web applications.",
+                "Performed unit testing and debugging to ensure code reliability and scalability.",
+                "Led a team of developers in an Agile environment to deliver projects on time and within budget."
+            ]
+        },
+        {
+            "position": "Software Engineer at SaminCoin",
+            "location": "Karaj, Iran",
+            "period": "Oct 2021 - Jan 2023",
+            "responsibilities": [
+                "Developed and maintained backend systems using Python and Django.",
+                "Designed and implemented RESTful APIs for various projects.",
+                "Collaborated with a team of developers to troubleshoot and optimize code.",
+                "Utilized version control systems such as Git for code management.",
+                "Performed code reviews and provided constructive feedback to peers.",
+                "Contributed to the architecture and design of new software features.",
+                "Developed scenario models using UML for new features and collaborated with the UI/UX team."
+            ]
+        }
+    ],
+    "education": [
+        "Bachelor's in Information Technology, Azad University of Karaj - Sep 2015 - Aug 2020",
+        "Master's in Telecommunications (MATT), UPC - Feb 2023 - Present"
+    ],
+    "skills": [
+        "Programming: Python, Flask, Django",
+        "Technologies: Docker, Git, Machine Vision",
+        "AI: Machine Learning, Deep Learning",
+        "Other: Document Workflow, Scenario Modeling"
+    ],
+    "languages": [
+        "English: Advanced, IELTS",
+        "Spanish: Beginner",
+        "Farsi: Native Language"
+    ],
+    "translations": {
+        "contact": "Contact Information",
+        "objective": "Objective",
+        "experience": "Experience",
+        "education": "Education",
+        "skills": "Skills",
+        "languages": "Languages"
+    }
+}

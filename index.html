@@ -80,8 +80,22 @@
             background-color: #1481b4;
         }
 
-        .burger-menu {
+        .language-select {
             position: absolute;
+            top: 20px;
+            right: 140px;
+            background-color: #1ca7ec;
+            color: #fff;
+            border: none;
+            padding: 0.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            z-index: 1001;
+        }
+
+        .burger-menu {
+            position: fixed;
             top: 20px;
             left: 20px;
             background-color: #1ca7ec;
@@ -236,7 +250,8 @@
             }
 
             .toggle-button,
-            .burger-menu {
+            .burger-menu,
+            .language-select {
                 top: 10px;
             }
 
@@ -249,90 +264,154 @@
 </head>
 <body class="dark-mode">
     <header>
-        <button class="burger-menu" id="burgerMenuButton" onclick="toggleMenu()">☰ Menu</button>
+        <button class="burger-menu" id="burgerMenuButton" onclick="toggleMenu()">☰</button>
         <button class="toggle-button" onclick="toggleMode()">Light Mode</button>
-        <img src="profile.png" alt="Profile Picture" class="profile-picture">
+        <select class="language-select" id="languageSelect" onchange="changeLanguage()">
+            <option value="english.json">English</option>
+            <option value="espanol.json">Español</option>
+        </select>
+        <img id="profilePicture" alt="Profile Picture" class="profile-picture">
         <div>
-            <h1>Sobhan Fooladi Mahani</h1>
-            <p>Python Developer | AI</p>
+            <h1 id="fullName"></h1>
+            <p id="title"></p>
         </div>
     </header>
     <div class="menu" id="menu">
-        <a href="#contact" onclick="navigateToSection('contact')">Contact</a>
-        <a href="#objective" onclick="navigateToSection('objective')">Objective</a>
-        <a href="#experience" onclick="navigateToSection('experience')">Experience</a>
-        <a href="#education" onclick="navigateToSection('education')">Education</a>
-        <a href="#skills" onclick="navigateToSection('skills')">Skills</a>
-        <a href="#languages" onclick="navigateToSection('languages')">Languages</a>
+        <a href="#contact" id="contactLink" onclick="navigateToSection('contact')">Contact</a>
+        <a href="#objective" id="objectiveLink" onclick="navigateToSection('objective')">Objective</a>
+        <a href="#experience" id="experienceLink" onclick="navigateToSection('experience')">Experience</a>
+        <a href="#education" id="educationLink" onclick="navigateToSection('education')">Education</a>
+        <a href="#skills" id="skillsLink" onclick="navigateToSection('skills')">Skills</a>
+        <a href="#languages" id="languagesLink" onclick="navigateToSection('languages')">Languages</a>
         <button class="close-menu" onclick="toggleMenu()">Close</button>
     </div>
     <div class="container">
         <section id="contact">
-            <h2 class="section-title">Contact Information</h2>
-            <p><strong>Email:</strong> sobhan.fld@outlook.com</p>
-            <p><strong>Address:</strong> Spain, Barcelona, Carrer de Valencia 443</p>
-            <p><strong>Phone:</strong> +34 661062800</p>
-            <p><strong>Date of Birth:</strong> May 5, 1996</p>
-            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/sobhan-fooladi-71b407232/" target="_blank">sobhan-fooladi-71b407232</a></p>
+            <h2 class="section-title" id="contactTitle">Contact Information</h2>
+            <p><strong>Email:</strong> <span id="email"></span></p>
+            <p><strong>Address:</strong> <span id="address"></span></p>
+            <p><strong>Phone:</strong> <span id="phone"></span></p>
+            <p><strong>Date of Birth:</strong> <span id="dob"></span></p>
+            <p><strong>LinkedIn:</strong> <a id="linkedin" target="_blank"></a></p>
             <div class="action-buttons">
                 <button onclick="callMe()">Call Me</button>
                 <button onclick="sendEmail()">Send Email</button>
             </div>
         </section>
         <section id="objective">
-            <h2 class="section-title">Objective</h2>
-            <p>I am a seasoned Python Developer with a strong background in Information Technology. My experience includes working with a leading cryptocurrency company where I was responsible for developing and maintaining complex software solutions.</p>
-            <p>I have a proven track record of successfully managing and executing intricate IT projects, delivering high-quality code, and bringing innovative products to market. My expertise in Python programming and microservices architecture using Flask enables me to bridge the gap between business and technology, ensuring that software solutions are delivered on time, within budget, and exceed customer expectations.</p>
-            <p>I also have a proven track record of creating AI-driven web applications with the team I am currently working with.</p>
+            <h2 class="section-title" id="objectiveTitle">Objective</h2>
+            <div id="objectiveContent"></div>
         </section>
         <section id="experience">
-            <h2 class="section-title">Experience</h2>
-            <ul>
-                <li><strong>Backend Developer at Imaz Tech</strong> (Barcelona, Spain) - Jul 2023 - Present</li>
-                <ul>
-                    <li>Developed and maintained backend services and APIs using Flask for ML services and microservices.</li>
-                    <li>Optimized application performance through code refactoring and database indexing.</li>
-                    <li>Collaborated with front-end developers to create responsive and interactive web applications.</li>
-                    <li>Performed unit testing and debugging to ensure code reliability and scalability.</li>
-                    <li>Led a team of developers in an Agile environment to deliver projects on time and within budget.</li>
-                </ul>
-                <li><strong>Software Engineer at SaminCoin</strong> (Karaj, Iran) - Oct 2021 - Jan 2023</li>
-                <ul>
-                    <li>Developed and maintained backend systems using Python and Django.</li>
-                    <li>Designed and implemented RESTful APIs for various projects.</li>
-                    <li>Collaborated with a team of developers to troubleshoot and optimize code.</li>
-                    <li>Utilized version control systems such as Git for code management.</li>
-                    <li>Performed code reviews and provided constructive feedback to peers.</li>
-                    <li>Contributed to the architecture and design of new software features.</li>
-                    <li>Developed scenario models using UML for new features and collaborated with the UI/UX team.</li>
-                </ul>
-            </ul>
+            <h2 class="section-title" id="experienceTitle">Experience</h2>
+            <div id="experienceList"></div>
         </section>
         <section id="education">
-            <h2 class="section-title">Education</h2>
-            <ul>
-                <li><strong>Bachelor's in Information Technology</strong>, Azad University of Karaj - Sep 2015 - Aug 2020</li>
-                <li><strong>Master's in Telecommunications (MATT)</strong>, UPC - Feb 2023 - Present</li>
-            </ul>
+            <h2 class="section-title" id="educationTitle">Education</h2>
+            <ul id="educationList"></ul>
         </section>
         <section id="skills">
-            <h2 class="section-title">Skills</h2>
-            <p><strong>Programming:</strong> Python, Flask, Django</p>
-            <p><strong>Technologies:</strong> Docker, Git, Machine Vision</p>
-            <p><strong>AI:</strong> Machine Learning, Deep Learning</p>
-            <p><strong>Other:</strong> Document Workflow, Scenario Modeling</p>
+            <h2 class="section-title" id="skillsTitle">Skills</h2>
+            <ul id="skillsList"></ul>
         </section>
         <section id="languages">
-            <h2 class="section-title">Languages</h2>
-            <p><strong>English:</strong> Advanced, IELTS</p>
-            <p><strong>Spanish:</strong> Beginner</p>
-            <p><strong>Farsi:</strong> Native Language</p>
+            <h2 class="section-title" id="languagesTitle">Languages</h2>
+            <ul id="languagesList"></ul>
         </section>
     </div>
     <footer>
         <p>© 2024 Sobhan Fooladi Mahani</p>
     </footer>
     <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            loadLanguageData("english.json");
+        });
+
+        function loadLanguageData(dataFile) {
+            fetch(dataFile)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("profilePicture").src = data.profilePicture;
+                    document.getElementById("fullName").textContent = data.fullName;
+                    document.getElementById("title").textContent = data.title;
+                    document.getElementById("email").textContent = data.contact.email;
+                    document.getElementById("address").textContent = data.contact.address;
+                    document.getElementById("phone").textContent = data.contact.phone;
+                    document.getElementById("dob").textContent = data.contact.dob;
+                    const linkedin = document.getElementById("linkedin");
+                    linkedin.href = data.contact.linkedin;
+                    linkedin.textContent = data.contact.linkedin;
+                    populateObjective("objectiveContent", data.objective);
+                    populateExperience("experienceList", data.experience);
+                    populateList("educationList", data.education);
+                    populateList("skillsList", data.skills);
+                    populateList("languagesList", data.languages);
+                    translateTitles(data.translations);
+                })
+                .catch(error => console.error("Error fetching JSON data:", error));
+        }
+
+        function changeLanguage() {
+            const languageSelect = document.getElementById("languageSelect");
+            const selectedLanguage = languageSelect.value;
+            loadLanguageData(selectedLanguage);
+        }
+
+        function translateTitles(translations) {
+            document.getElementById("contactTitle").textContent = translations.contact;
+            document.getElementById("objectiveTitle").textContent = translations.objective;
+            document.getElementById("experienceTitle").textContent = translations.experience;
+            document.getElementById("educationTitle").textContent = translations.education;
+            document.getElementById("skillsTitle").textContent = translations.skills;
+            document.getElementById("languagesTitle").textContent = translations.languages;
+
+            document.getElementById("contactLink").textContent = translations.contact;
+            document.getElementById("objectiveLink").textContent = translations.objective;
+            document.getElementById("experienceLink").textContent = translations.experience;
+            document.getElementById("educationLink").textContent = translations.education;
+            document.getElementById("skillsLink").textContent = translations.skills;
+            document.getElementById("languagesLink").textContent = translations.languages;
+        }
+
+        function populateObjective(objectiveId, objectiveArray) {
+            const container = document.getElementById(objectiveId);
+            container.innerHTML = "";
+            objectiveArray.forEach(paragraph => {
+                const p = document.createElement("p");
+                p.textContent = paragraph;
+                container.appendChild(p);
+            });
+        }
+
+        function populateExperience(experienceId, experienceArray) {
+            const container = document.getElementById(experienceId);
+            container.innerHTML = "";
+            experienceArray.forEach(exp => {
+                const expDiv = document.createElement("div");
+                const title = document.createElement("h3");
+                title.textContent = `${exp.position} (${exp.location}) - ${exp.period}`;
+                expDiv.appendChild(title);
+                const ul = document.createElement("ul");
+                exp.responsibilities.forEach(responsibility => {
+                    const li = document.createElement("li");
+                    li.textContent = responsibility;
+                    ul.appendChild(li);
+                });
+                expDiv.appendChild(ul);
+                container.appendChild(expDiv);
+            });
+        }
+
+        function populateList(listId, items) {
+            const list = document.getElementById(listId);
+            list.innerHTML = "";
+            items.forEach(item => {
+                const li = document.createElement("li");
+                li.textContent = item;
+                list.appendChild(li);
+            });
+        }
+
         function toggleMode() {
             const body = document.body;
             const button = document.querySelector('.toggle-button');

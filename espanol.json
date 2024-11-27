@@ -1,0 +1,68 @@
+{
+    "profilePicture": "profile.png",
+    "fullName": "Sobhan Fooladi Mahani",
+    "title": "Desarrollador Python | IA",
+    "contact": {
+        "email": "sobhan.fld@outlook.com",
+        "address": "España, Barcelona, Carrer de Valencia 443",
+        "phone": "+34 661062800",
+        "dob": "5 de mayo de 1996",
+        "linkedin": "https://www.linkedin.com/in/sobhan-fooladi-71b407232/"
+    },
+    "objective": [
+        "Soy un desarrollador de Python con amplia experiencia en Tecnología de la Información. He trabajado en una empresa líder de criptomonedas donde era responsable de desarrollar y mantener soluciones de software complejas.",
+        "Tengo un historial comprobado de gestionar y ejecutar proyectos de TI complejos, entregando código de alta calidad y lanzando productos innovadores al mercado. Mi experiencia en programación en Python y en arquitectura de microservicios usando Flask me permite cerrar la brecha entre el negocio y la tecnología, asegurando que las soluciones de software se entreguen a tiempo, dentro del presupuesto y superen las expectativas del cliente.",
+        "También tengo un historial comprobado de crear aplicaciones web impulsadas por IA con el equipo con el que estoy trabajando actualmente."
+    ],
+    "experience": [
+        {
+            "position": "Desarrollador Backend en Imaz Tech",
+            "location": "Barcelona, España",
+            "period": "Jul 2023 - Presente",
+            "responsibilities": [
+                "Desarrollo y mantenimiento de servicios backend y APIs usando Flask para servicios de ML y microservicios.",
+                "Optimización del rendimiento de la aplicación mediante la refactorización del código y la indexación de la base de datos.",
+                "Colaboración con desarrolladores front-end para crear aplicaciones web interactivas y responsivas.",
+                "Realización de pruebas unitarias y depuración para asegurar la fiabilidad y escalabilidad del código.",
+                "Liderazgo de un equipo de desarrolladores en un entorno Ágil para entregar proyectos a tiempo y dentro del presupuesto."
+            ]
+        },
+        {
+            "position": "Ingeniero de Software en SaminCoin",
+            "location": "Karaj, Irán",
+            "period": "Oct 2021 - Ene 2023",
+            "responsibilities": [
+                "Desarrollo y mantenimiento de sistemas backend usando Python y Django.",
+                "Diseño e implementación de APIs RESTful para varios proyectos.",
+                "Colaboración con un equipo de desarrolladores para solucionar problemas y optimizar el código.",
+                "Utilización de sistemas de control de versiones como Git para la gestión del código.",
+                "Realización de revisiones de código y proporcionar retroalimentación constructiva a los compañeros.",
+                "Contribución a la arquitectura y diseño de nuevas características de software.",
+                "Desarrollo de modelos de escenarios usando UML para nuevas características y colaboración con el equipo de UI/UX."
+            ]
+        }
+    ],
+    "education": [
+        "Licenciatura en Tecnología de la Información, Universidad Azad de Karaj - Sep 2015 - Ago 2020",
+        "Maestría en Telecomunicaciones (MATT), UPC - Feb 2023 - Presente"
+    ],
+    "skills": [
+        "Programación: Python, Flask, Django",
+        "Tecnologías: Docker, Git, Visión Artificial",
+        "IA: Aprendizaje Automático, Aprendizaje Profundo",
+        "Otros: Flujo de Trabajo de Documentos, Modelado de Escenarios"
+    ],
+    "languages": [
+        "Inglés: Avanzado, IELTS",
+        "Español: Principiante",
+        "Persa: Lengua Materna"
+    ],
+    "translations": {
+        "contact": "Información de Contacto",
+        "objective": "Objetivo",
+        "experience": "Experiencia",
+        "education": "Educación",
+        "skills": "Habilidades",
+        "languages": "Idiomas"
+    }
+}
