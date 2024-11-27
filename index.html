@@ -5,268 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobhan Fooladi Mahani - CV</title>
     <meta name="theme-color" content="#1e1e1e">
-    <style>
-        /* General Reset */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            transition: background-color 0.3s, color 0.3s;
-            scroll-behavior: smooth;
-        }
-
-        /* Dark Mode Styles */
-        body.dark-mode {
-            background-color: #1e1e1e;
-            color: #ddd;
-        }
-
-        /* Light Mode Styles */
-        body.light-mode {
-            background-color: #f9f9f9;
-            color: #333;
-        }
-
-        header {
-            background: linear-gradient(135deg, #1e1e1e, #333);
-            color: #fff;
-            text-align: left;
-            padding: 2rem;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-bottom: 2px solid #444;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-            margin-left: 1rem;
-        }
-
-        header p {
-            margin: 0.5rem 0 0;
-            font-size: 1.2rem;
-            color: #bbb;
-            margin-left: 1rem;
-        }
-
-        .profile-picture {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid #1ca7ec;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-        }
-
-        .toggle-button {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background-color: #1ca7ec;
-            color: #fff;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            z-index: 1001;
-        }
-
-        .toggle-button:hover {
-            background-color: #1481b4;
-        }
-
-        .language-select {
-            position: absolute;
-            top: 20px;
-            right: 140px;
-            background-color: #1ca7ec;
-            color: #fff;
-            border: none;
-            padding: 0.5rem;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            z-index: 1001;
-        }
-
-        .burger-menu {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            background-color: #1ca7ec;
-            color: #fff;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            cursor: pointer;
-            z-index: 1001;
-        }
-
-        .burger-menu:hover {
-            background-color: #1481b4;
-        }
-
-        .burger-menu.hidden {
-            display: none;
-        }
-
-        .menu {
-            position: fixed;
-            top: 0;
-            left: -100%;
-            width: 250px;
-            height: 100%;
-            background-color: #1e1e1e;
-            padding: 1rem;
-            box-shadow: 3px 0 10px rgba(0, 0, 0, 0.5);
-            z-index: 1002;
-            transition: left 0.3s ease-in-out;
-        }
-
-        .menu.open {
-            left: 0;
-        }
-
-        .menu a {
-            color: #1ca7ec;
-            text-decoration: none;
-            display: block;
-            margin: 1rem 0;
-            cursor: pointer;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-
-        .menu a:hover {
-            color: #62c3f5;
-        }
-
-        .close-menu {
-            display: block;
-            background-color: #1ca7ec;
-            color: #fff;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 1rem;
-        }
-
-        .close-menu:hover {
-            background-color: #1481b4;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 1rem;
-        }
-
-        section {
-            background: #2e2e2e;
-            margin: 1rem 0;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        section:hover {
-            transform: scale(1.03);
-            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
-        }
-
-        body.light-mode section {
-            background: #fff;
-            color: #333;
-        }
-
-        .section-title {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: #1ca7ec;
-            border-bottom: 2px solid #444;
-            display: inline-block;
-        }
-
-        body.light-mode .section-title {
-            color: #333;
-            border-bottom: 2px solid #888;
-        }
-
-        .action-buttons {
-            margin-top: 1rem;
-        }
-
-        .action-buttons button {
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-right: 0.5rem;
-            transition: background-color 0.3s, color 0.3s;
-            background-color: #1ca7ec;
-            color: #fff;
-        }
-
-        .action-buttons button:hover {
-            background-color: #1481b4;
-            color: #fff;
-        }
-
-        footer {
-            text-align: center;
-            padding: 1rem;
-            background: #1e1e1e;
-            color: #bbb;
-            margin-top: 2rem;
-            border-top: 2px solid #444;
-        }
-
-        body.light-mode footer {
-            background: #ddd;
-            color: #333;
-        }
-
-        a {
-            color: #1ca7ec;
-            text-decoration: none;
-        }
-
-        a:hover {
-            color: #62c3f5;
-        }
-
-        /* Mobile View Adjustments */
-        @media (max-width: 600px) {
-            header {
-                padding-top: 5rem; /* Adds space for the menu and toggle button */
-                flex-direction: column;
-            }
-
-            .toggle-button,
-            .burger-menu,
-            .language-select {
-                top: 10px;
-            }
-
-            header h1, header p {
-                margin-left: 0;
-                text-align: center;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body class="dark-mode">
     <header>
-        <button class="burger-menu" id="burgerMenuButton" onclick="toggleMenu()">☰</button>
-        <button class="toggle-button" onclick="toggleMode()">Light Mode</button>
-        <select class="language-select" id="languageSelect" onchange="changeLanguage()">
+        <button class="burger-menu" id="burgerMenuButton">☰</button>
+        <button class="toggle-button" id="toggleModeButton">Light Mode</button>
+        <select class="language-select" id="languageSelect">
             <option value="english.json">English</option>
             <option value="espanol.json">Español</option>
         </select>
@@ -277,13 +22,13 @@
         </div>
     </header>
     <div class="menu" id="menu">
-        <a href="#contact" id="contactLink" onclick="navigateToSection('contact')">Contact</a>
-        <a href="#objective" id="objectiveLink" onclick="navigateToSection('objective')">Objective</a>
-        <a href="#experience" id="experienceLink" onclick="navigateToSection('experience')">Experience</a>
-        <a href="#education" id="educationLink" onclick="navigateToSection('education')">Education</a>
-        <a href="#skills" id="skillsLink" onclick="navigateToSection('skills')">Skills</a>
-        <a href="#languages" id="languagesLink" onclick="navigateToSection('languages')">Languages</a>
-        <button class="close-menu" onclick="toggleMenu()">Close</button>
+        <a href="#contact" id="contactLink">Contact</a>
+        <a href="#objective" id="objectiveLink">Objective</a>
+        <a href="#experience" id="experienceLink">Experience</a>
+        <a href="#education" id="educationLink">Education</a>
+        <a href="#skills" id="skillsLink">Skills</a>
+        <a href="#languages" id="languagesLink">Languages</a>
+        <button class="close-menu" id="closeMenuButton">Close</button>
     </div>
     <div class="container">
         <section id="contact">
@@ -294,8 +39,8 @@
             <p><strong>Date of Birth:</strong> <span id="dob"></span></p>
             <p><strong>LinkedIn:</strong> <a id="linkedin" target="_blank"></a></p>
             <div class="action-buttons">
-                <button onclick="callMe()">Call Me</button>
-                <button onclick="sendEmail()">Send Email</button>
+                <button id="callMeButton">Call Me</button>
+                <button id="sendEmailButton">Send Email</button>
             </div>
         </section>
         <section id="objective">
@@ -322,130 +67,6 @@
     <footer>
         <p>© 2024 Sobhan Fooladi Mahani</p>
     </footer>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            loadLanguageData("english.json");
-        });
-
-        function loadLanguageData(dataFile) {
-            fetch(dataFile)
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById("profilePicture").src = data.profilePicture;
-                    document.getElementById("fullName").textContent = data.fullName;
-                    document.getElementById("title").textContent = data.title;
-                    document.getElementById("email").textContent = data.contact.email;
-                    document.getElementById("address").textContent = data.contact.address;
-                    document.getElementById("phone").textContent = data.contact.phone;
-                    document.getElementById("dob").textContent = data.contact.dob;
-                    const linkedin = document.getElementById("linkedin");
-                    linkedin.href = data.contact.linkedin;
-                    linkedin.textContent = data.contact.linkedin;
-                    populateObjective("objectiveContent", data.objective);
-                    populateExperience("experienceList", data.experience);
-                    populateList("educationList", data.education);
-                    populateList("skillsList", data.skills);
-                    populateList("languagesList", data.languages);
-                    translateTitles(data.translations);
-                })
-                .catch(error => console.error("Error fetching JSON data:", error));
-        }
-
-        function changeLanguage() {
-            const languageSelect = document.getElementById("languageSelect");
-            const selectedLanguage = languageSelect.value;
-            loadLanguageData(selectedLanguage);
-        }
-
-        function translateTitles(translations) {
-            document.getElementById("contactTitle").textContent = translations.contact;
-            document.getElementById("objectiveTitle").textContent = translations.objective;
-            document.getElementById("experienceTitle").textContent = translations.experience;
-            document.getElementById("educationTitle").textContent = translations.education;
-            document.getElementById("skillsTitle").textContent = translations.skills;
-            document.getElementById("languagesTitle").textContent = translations.languages;
-
-            document.getElementById("contactLink").textContent = translations.contact;
-            document.getElementById("objectiveLink").textContent = translations.objective;
-            document.getElementById("experienceLink").textContent = translations.experience;
-            document.getElementById("educationLink").textContent = translations.education;
-            document.getElementById("skillsLink").textContent = translations.skills;
-            document.getElementById("languagesLink").textContent = translations.languages;
-        }
-
-        function populateObjective(objectiveId, objectiveArray) {
-            const container = document.getElementById(objectiveId);
-            container.innerHTML = "";
-            objectiveArray.forEach(paragraph => {
-                const p = document.createElement("p");
-                p.textContent = paragraph;
-                container.appendChild(p);
-            });
-        }
-
-        function populateExperience(experienceId, experienceArray) {
-            const container = document.getElementById(experienceId);
-            container.innerHTML = "";
-            experienceArray.forEach(exp => {
-                const expDiv = document.createElement("div");
-                const title = document.createElement("h3");
-                title.textContent = `${exp.position} (${exp.location}) - ${exp.period}`;
-                expDiv.appendChild(title);
-                const ul = document.createElement("ul");
-                exp.responsibilities.forEach(responsibility => {
-                    const li = document.createElement("li");
-                    li.textContent = responsibility;
-                    ul.appendChild(li);
-                });
-                expDiv.appendChild(ul);
-                container.appendChild(expDiv);
-            });
-        }
-
-        function populateList(listId, items) {
-            const list = document.getElementById(listId);
-            list.innerHTML = "";
-            items.forEach(item => {
-                const li = document.createElement("li");
-                li.textContent = item;
-                list.appendChild(li);
-            });
-        }
-
-        function toggleMode() {
-            const body = document.body;
-            const button = document.querySelector('.toggle-button');
-            if (body.classList.contains('dark-mode')) {
-                body.classList.remove('dark-mode');
-                body.classList.add('light-mode');
-                button.textContent = "Dark Mode";
-            } else {
-                body.classList.remove('light-mode');
-                body.classList.add('dark-mode');
-                button.textContent = "Light Mode";
-            }
-        }
-
-        function toggleMenu() {
-            const menu = document.getElementById('menu');
-            const burgerMenuButton = document.getElementById('burgerMenuButton');
-            menu.classList.toggle('open');
-            burgerMenuButton.classList.toggle('hidden');
-        }
-
-        function navigateToSection(sectionId) {
-            const section = document.getElementById(sectionId);
-            section.scrollIntoView({ behavior: 'smooth' });
-            toggleMenu();
-        }
-
-        function callMe() {
-            window.location.href = 'tel:+34661062800';
-        }
-
-        function sendEmail() {
-            window.location.href = 'mailto:sobhan.fld@outlook.com';
-        }
-    </script>
+    <script src="scripts.js"></script>
 </body>
 </html>
