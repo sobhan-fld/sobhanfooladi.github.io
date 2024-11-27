@@ -10,9 +10,9 @@
         "linkedin": "https://www.linkedin.com/in/sobhan-fooladi-71b407232/"
     },
     "objective": [
-        "Soy un desarrollador de Python con amplia experiencia en Tecnología de la Información. He trabajado en una empresa líder de criptomonedas donde era responsable de desarrollar y mantener soluciones de software complejas.",
-        "Tengo un historial comprobado de gestionar y ejecutar proyectos de TI complejos, entregando código de alta calidad y lanzando productos innovadores al mercado. Mi experiencia en programación en Python y en arquitectura de microservicios usando Flask me permite cerrar la brecha entre el negocio y la tecnología, asegurando que las soluciones de software se entreguen a tiempo, dentro del presupuesto y superen las expectativas del cliente.",
-        "También tengo un historial comprobado de crear aplicaciones web impulsadas por IA con el equipo con el que estoy trabajando actualmente."
+        "Desarrollador Python altamente cualificado con una sólida base en Tecnología de la Información y amplia experiencia en el desarrollo y mantenimiento de soluciones de software complejas. Logros destacados incluyen la creación de soluciones para la clasificación de señales EMG, el diseño de lógica avanzada y algoritmos para diversos proyectos, y la contribución a servicios impulsados por IA para aplicaciones innovadoras como MAXSENS.",
+        "Con un historial probado en la entrega de API escalables y de alta calidad y en la gestión de proyectos de TI complejos, conecto los desafíos técnicos con los objetivos empresariales. Mi experiencia abarca la implementación de modelos de aprendizaje automático y el despliegue de soluciones de IA innovadoras adaptadas a las necesidades específicas de usuarios y negocios.",
+        "Apasionado por aprovechar la tecnología para resolver problemas del mundo real, prospero en entornos dinámicos donde la creatividad y la precisión son clave para el éxito. Mi compromiso con la excelencia garantiza que todas las soluciones superen las expectativas y generen valor e innovación."
     ],
     "experience": [
         {
@@ -59,7 +59,7 @@
     ],
     "translations": {
         "contact": "Información de Contacto",
-        "objective": "Objetivo",
+        "objective": "Resumen Profesional",
         "experience": "Experiencia",
         "education": "Educación",
         "skills": "Habilidades",
