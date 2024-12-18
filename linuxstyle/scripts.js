@@ -50,14 +50,19 @@ document.addEventListener("DOMContentLoaded", function() {
             .then(response => response.json())
             .then(data => {
                 if (params[0] === "--help") {
-                    printToTerminal(`Available commands:\ncv --help\ncv --language [lang]\ncv --info\ncv --skills`);
+                    printToTerminal(`Available commands:\ncv --help\ncv --language [lang]\ncv --info\ncv --skills\ncv --PS (for professional summery)`);
                 } else if (params[0] === "--language") {
                     printToTerminal(`${data.languages}`);
                 } else if (params[0] === "--info") {
                     printToTerminal(`${data.fullName}\n${data.title}\nEmail: ${data.contact.email}\nPhone: ${data.contact.phone}`);
                 } else if (params[0] === "--skills") {
                     printToTerminal(`${data.skills}`);
-                } else {
+                } else if (params[0] === "--PS"){
+                    printToTerminal(`${data.objective}`)
+                } else if (params[0] === "--ex"){
+                    printToTerminal(`${data.skills}`)
+                }
+                else {
                     printToTerminal("Invalid cv command. Use 'cv --help' for guidance.");
                 }
             })
