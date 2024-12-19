@@ -55,10 +55,32 @@ document.addEventListener("DOMContentLoaded", function() {
                 terminalOutput.appendChild(cursor); // Reset cursor
                 showDefaultOutput();
                 break;
+            case "cowsay":
+                handleCowsayCommand(params.join(" "));
+                break;
             default:
                 printToTerminal(`Command not found: ${cmd}`);
         }
     }
+
+    function handleCowsayCommand(message) {
+    if (!message) {
+        printToTerminal("Usage: cowsay [message]");
+        return;
+    }
+
+    const cowArt = `
+        ${"_".repeat(message.length + 2)}
+       < ${message} >
+        ${"-".repeat(message.length + 2)}
+           \\   ^__^
+            \\  (oo)\\_______
+               (__)\\       )\\/\\
+                   ||----w |
+                   ||     ||
+    `;
+    printToTerminal(cowArt);
+}
 
     function handleCVCommands(params) {
         fetch("english.json")
