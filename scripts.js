@@ -50,6 +50,19 @@ document.getElementById("toggleModeButton").addEventListener("click", function()
 
 document.getElementById("burgerMenuButton").addEventListener("click", toggleMenu);
 document.getElementById("closeMenuButton").addEventListener("click", toggleMenu);
+document.addEventListener("click", function(event) {
+    const menu = document.getElementById("menu");
+    const burgerMenuButton = document.getElementById("burgerMenuButton");
+
+    // Check if the menu is open and the click is outside both the menu and the button
+    if (menu.classList.contains("open") &&
+        !menu.contains(event.target) &&
+        !burgerMenuButton.contains(event.target)) {
+        menu.classList.remove("open");
+        burgerMenuButton.classList.remove("hidden");
+    }
+});
+
 
 function toggleMenu() {
     const menu = document.getElementById('menu');
